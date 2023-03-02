@@ -7,32 +7,32 @@
 # Pre-requisites: [...UPDATE THIS...]
 # Any other information needed? [...UPDATE THIS...]
 
-
 #### Workspace setup ####
 library(tidyverse)
 library(janitor)
 
 #### Simulate data ####
+set.seed(124)
 simulated_data <-
   tibble(
-    # Patient categories, predefined and set terms
-    "tea_number" = c(1:8),
+    "attempt" = c(1:8),
     
-    # Response time mandates, predefined and set numbers
+    "tea_number" = sample(
+      x = c(1:8),
+      size = 8,
+      replace = FALSE
+    ),
+    
     "guess" = sample(
       x = c(1:2),
       size = 8,
       replace = TRUE
     ),
     
-    # Performance mandates, predefined and set percentage
     "actual" = sample(
-      x = c(1:2),
+      x = c(1:8),
       size = 8,
       replace = TRUE
     ),
   )
 simulated_data
-
-
-
